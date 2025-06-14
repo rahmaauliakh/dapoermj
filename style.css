@@ -1,0 +1,61 @@
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #F8F4E1;
+  color: #4E1F00;
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+  background-color: #FEBA17 !important;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #4E1F00 !important;
+}
+
+.navbar-toggler {
+  border-color: #4E1F00;
+}
+
+.btn-primary {
+  background-color: #4E1F00;
+  border-color: #4E1F00;
+}
+
+.btn-primary:hover {
+  background-color: #74512D;
+  border-color: #74512D;
+}
+
+.btn-warning {
+  background-color: #FEBA17;
+  border-color: #FEBA17;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  border-color: #e0a800;
+}
+
+#menu, #beranda, #cara-pesan, #kontak, #ulasan {
+  scroll-margin-top: 80px;
+}
+
+footer {
+  background-color: #FEBA17;
+  color: #4E1F00;
+  padding: 20px 0;
+  text-align: center;
+}
