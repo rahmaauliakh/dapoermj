@@ -1,0 +1,76 @@
+<!-- Detail Menu: Kimbap Bento Box -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kimbap Bento Box - Dapoer MJ</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    body { font-family: 'Nunito', sans-serif; background-color: #F8F4E1; color: #4E1F00; }
+    .navbar { background-color: #FEBA17 !important; }
+    .menu-detail { background-color: #fff; border-radius: 1rem; padding: 2rem; }
+    .price-tag { color: #4E1F00; font-size: 1.8rem; font-weight: bold; }
+    .order-btn { background-color: #4E1F00; color: white; border: none; padding: 0.75rem; width: 100%; border-radius: 0.5rem; }
+    .order-btn:hover { background-color: #74512D; }
+    footer { background-color: #FEBA17; color: #4E1F00; padding: 20px 0; text-align: center; }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Dapoer MJ</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html#kategori">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#menu">Menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#cara-pesan">Cara Pesan</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#ulasan">Ulasan</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#kontak">Kontak</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-2">
+        <a href="cart.html" class="btn btn-sm text-white" style="background-color: #4E1F00;"><i class="bi bi-cart-fill"></i> Keranjang</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div style="height: 80px;"></div>
+<div class="container">
+  <div class="menu-detail shadow mb-5">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <img src="menu1.jpg"img-fluid rounded shadow" alt="Kimbap Bento Box">
+      </div>
+      <div class="col-md-6">
+        <h2 class="fw-bold">Kimbap Bento Box</h2>
+        <p class="text-muted mb-1">Tersedia mulai: <strong>13 Juni 2025</strong></p>
+        <p class="price-tag">Rp 18.000</p>
+        <p class="mt-4">Nasi putih digulung dengan nori, isian telur dadar, disajikan bersama sayuran rebus (wortel, jagung, kembang kol, buncis) dan saus celupan dalam bento box.</p>
+        <a href="#" class="btn order-btn" onclick="addToCart()">Masukkan ke Keranjang</a>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="container text-center">
+    <p class="mb-0">&copy; <span id="year"></span> <strong>Dapoer MJ</strong>. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+  function addToCart() {
+    const item = { name: 'Kimbap Bento Box', price: 18000, quantity: 1 };
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existing = cart.find(i => i.name === item.name);
+    if (existing) existing.quantity += 1; else cart.push(item);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    window.location.href = 'cart.html';
+  }
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
